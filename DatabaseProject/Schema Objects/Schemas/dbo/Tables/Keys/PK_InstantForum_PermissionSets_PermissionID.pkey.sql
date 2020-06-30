@@ -1,0 +1,3 @@
+﻿/*ALTER TABLE [dbo].[InstantForum_PermissionSets]
+    ADD CONSTRAINT [PK_InstantForum_PermissionSets_PermissionID] PRIMARY KEY CLUSTERED ([PermissionID] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF);*/
+

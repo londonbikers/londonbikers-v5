@@ -1,0 +1,213 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Tetron.SiteMaster" %>
+<%@ Register TagPrefix="Controls" TagName="MainNavigation" Src="~/_controls/MainNavigation.ascx" %>
+<%@ Register TagPrefix="Controls" TagName="OpenGraphMetaData" Src="~/_controls/OpenGraphMetaData.ascx" %>
+<!doctype html>
+<html lang="en" class="no-js">
+    <head id="Head1" runat="server">
+        <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&v2' rel='stylesheet' type='text/css' />
+		<link href='http://fonts.googleapis.com/css?family=Nobile&v2' rel='stylesheet' type='text/css' />
+        <link rel="alternate" type="application/rss+xml" title="Latest Motorcycle News" href="http://feeds.feedburner.com/LondonbikerscomLatestNews" />
+		<link rel="alternate" type="application/rss+xml" title="Latest Motorcycle Articles" href="http://feeds.feedburner.com/LondonbikerscomLatestArticles" />
+		<link rel="alternate" type="application/rss+xml" title="Latest Motorcycle Galleries" href="http://feeds.feedburner.com/LondonbikerscomLatestGalleries" />
+        <meta charset="utf-8" />
+        <!--[if IE]><![endif]-->
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>londonbikers.com - london's biking home</title>
+        <meta name="description" content="The home of motorcycling in London." />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+        <Controls:OpenGraphMetaData id="_openGraphMetaData" runat="server" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <!-- Javascript at the bottom for fast page loading -->
+        <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script>            !window.jQuery && document.write('<script src="/js/jquery-1.4.2.min.js"><\/script>')</script>
+        <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+    </head>
+    <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+    <!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
+    <!--[if IE 7 ]>    <body class="ie7"> <![endif]-->
+    <!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
+    <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!-->
+    <body>
+        <!--<![endif]-->
+        <div id="container">
+            <header>
+                <div id="openingHeaderRow">
+                    <div class="floatLeft"><a href="/"><img src="/_images/header-logo.png" width="252" height="104" alt="londonbikers.com" /></a></div>
+                    <iframe src="http://ads.mediapanther.com/abmw.aspx?z=14&isframe=true" width="728" height="90" style="margin-top:12px;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
+                <div id="topHeaderRowBase"></div>
+                <div id="navRow" class="clear">
+                    <Controls:MainNavigation id="_mainNav" runat="server" />
+                </div>
+                <div id="subNav">
+                    <div class="clear"></div>
+                    <div id="subNavOptions">
+                        <div class="snItem"><a href="/tags/motorcycles" class="sni">bikes</a></div>
+                        <div class="snItem"><a href="/tags/scooters" class="sni">scooters</a></div>
+                        <div class="snItem"><a href="/tags/clothing" class="sni">clothing</a></div>
+                        <div class="snItem"><a href="/tags/products" class="sni">products</a></div>
+                        <div class="snItem"><a href="/tags/london" class="sni">london</a></div>
+                        <div class="snItem"><a href="/tags/offroad" class="sni">offroad</a></div>
+                        <div class="snItem"><a href="/tags/bsb" class="sni">british superbikes</a></div>
+                        <div class="snItem"><a href="/tags/wsb" class="sni">world superbikes</a></div>
+                        <div class="snItem"><a href="/tags/motogp" class="sni">motogp</a></div>
+                    </div>
+                    <div id="searchFrame">
+                        <div id="searchBox"><input type="text" id="searchTerm" /></div><input type="submit" id="searchBtn" value="" onclick="GoSearch()" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div id="headerLastRow">
+                    <asp:PlaceHolder ID="_anonUserControls" runat="server" Visible="false">
+                        <a href="/register" id="joinBtn" class="huserctrl">Join LB</a><a href="/login" id="loginBtn" class="huserctrl">Login</a>
+                    </asp:PlaceHolder>
+                    <asp:PlaceHolder id="_memberUserControls" runat="server" visible="false">
+                        <div id="userControls">
+                            Welcome <b><asp:HyperLink ID="_userLink" runat="server" CssClass="usrCon" NavigateUrl="/forums/profile" /></b>
+                            | <a href="?cmd=logoff" class="usrSub">log-off</a>
+                            <asp:Literal ID="_toolsLink" runat="server" />
+                        </div>
+                    </asp:PlaceHolder>
+                    <div id="headerTagLine">london's home of biking</div>
+                </div>
+            </header>
+            <div id="main">
+                <div class="clear"></div>
+                <div id="<%= ShowRhsColumn ? "contentArea" : "contentAreaMax" %>">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                </div>
+                <asp:PlaceHolder id="_rhs" runat="server">
+                    <div id="rhs">
+                        <iframe src="http://ads.mediapanther.com/abmw.aspx?z=11&isframe=true" width="300" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        <div id="buttonFrame">
+                        <div id="bfFirst">
+                            <iframe id="bfR1I1" src="http://ads.mediapanther.com/abmw.aspx?z=7&isframe=true" width="120" height="120" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <iframe src="http://ads.mediapanther.com/abmw.aspx?z=8&isframe=true" width="120" height="120" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        </div>
+                        <div>
+                            <iframe id="bfR2I1" src="http://ads.mediapanther.com/abmw.aspx?z=9&isframe=true" width="120" height="120" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <iframe src="http://ads.mediapanther.com/abmw.aspx?z=15&isframe=true" width="120" height="120" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        </div>
+                    </div>
+                        <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1" type="text/javascript"></script><fb:like-box href="https://www.facebook.com/pages/londonbikerscom/34538636794" width="300" show_faces="true" border_color="" stream="false" header="false"></fb:like-box>
+                        <div id="promos">
+                            <a href="/events/wednesday-meet/"><img src="/_images/promos/bmm.jpeg" width="300" height="81" alt="Our weekly bike-meet at Borough Market" class="mb5" /></a>
+                            <a href="http://stolenvehicledatabase.org" target="_blank"><img src="/_images/promos/svd.png" width="300" height="81" alt="Stolen Vehicle Database - help fight bike crime!" class="mb5" /></a>
+                            <a href="http://motoprofessional.com" target="_blank"><img src="/_images/promos/mp.jpg" width="300" height="81" alt="Moto Professional - Pro Photos For Everyone" class="mb5" /></a>
+                        </div>
+                        <div id="twitterBox" class="mb5">
+                            <script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
+                            <script type="text/javascript">
+                                new TWTR.Widget({ version: 2, type: 'profile', rpp: 4, interval: 6000, width: 300, height: 400,
+                                    theme: { shell: { background: '#810000', color: '#ffffff' }, tweets: { background: '#ffffff', color: '#2d2d2d', links: '#2c5a93'} },
+                                    features: { scrollbar: false, loop: false, live: false, hashtags: true, timestamp: true, avatars: false, behavior: 'all' }
+                                }).render().setUser('londonbikers').start();
+                            </script>
+                        </div>
+						<iframe src="http://ads.mediapanther.com/abmw.aspx?z=17&isframe=true" width="300" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    </div>
+                </asp:PlaceHolder>
+                <div class="clear"></div>
+            </div>
+            <footer>
+                <div id="footerTop"></div>
+                <div id="footerMain">
+                    <div class="clear"></div>
+                    <div class="footerCol">
+                        <div class="footerHeading">hot content</div>
+                        <ul>
+                            <li><a href="/tags/bikes" class="footer">bikes</a></li>
+                            <li><a href="/tags/scooters" class="footer">scooters</a></li>
+                            <li><a href="/tags/clothing" class="footer">clothing</a></li>
+                            <li><a href="/tags/products" class="footer">products</a></li>
+                            <li><a href="/tags/events" class="footer">events</a></li>
+                            <li><a href="/tags/london" class="footer">london</a></li>
+                        </ul>
+                    </div>
+                    <div class="footerCol">
+                        <div class="footerHeading">racing</div>
+                        <ul>
+                            <li><a href="/tags/bsb" class="footer">british superbikes</a></li>
+                            <li><a href="/tags/wsb" class="footer">world superbikes</a></li>
+                            <li><a href="/tags/motogp" class="footer">motogp</a></li>
+                            <li><a href="/tags/mx" class="footer">motocross</a></li>
+                            <li><a href="/tags/supermoto" class="footer">supermoto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footerCol">
+                        <div class="footerHeading">discussions</div>
+                        <ul>
+                            <li><a href="/forums/general/bike-talk" class="footer">bike talk</a></li>
+                            <li><a href="/forums/general/pictures-videos" class="footer">photos &amp; videos</a></li>
+                            <li><a href="/forums/help-information/questions-answers" class="footer">questions &amp; answers</a></li>
+                            <li><a href="/forums/biking-experiences/ride-outs,-meets-events" class="footer">rideouts &amp; meets</a></li>
+                            <li><a href="/forums/classified-ads" class="footer">classified adverts</a></li>
+                        </ul>
+                    </div>
+                    <div class="footerCol">
+                        <div class="footerHeading">directory</div>
+                        <ul>
+                            <li><a href="/directory/category/10/dealers" class="footer">dealers</a></li>
+                            <li><a href="/directory/category/1/bike-meets" class="footer">bike meets</a></li>
+                            <li><a href="/directory/category/43/parts-accessories" class="footer">performance</a></li>
+                            <li><a href="/directory/category/60/repairs-servicing" class="footer">servicing</a></li>
+                            <li><a href="/directory/category/32/servicing-tyres" class="footer">tyres</a></li>
+                            <li><a href="/directory/category/9/events" class="footer">events</a></li>
+                        </ul>
+                    </div>
+                    <div class="footerCol">
+                        <div class="footerHeading">misc</div>
+                        <ul >
+                            <li><a href="/competitions" target="_blank" class="footer">competitions</a></li>
+                            <li><a href="/charity" target="_blank" class="footer">charity efforts</a></li>
+                            <li><a href="/partners" target="_blank" class="footer">partners</a></li>
+                        </ul>
+                        <div class="footerHeading mt10">feeds</div>
+                        <ul id="feeds">
+                            <li><img src="/_images/silk/rss.png" alt="" class="mr5" /> <a href="http://feeds.feedburner.com/LondonbikerscomLatestNews" target="_blank" class="footer">news</a></li>
+                            <li><img src="/_images/silk/rss.png" alt="" class="mr5" /> <a href="http://feeds.feedburner.com/LondonbikerscomLatestArticles" target="_blank" class="footer">features</a></li>
+                            <li><img src="/_images/silk/rss.png" alt="" class="mr5" /> <a href="http://feeds.feedburner.com/LondonbikerscomLatestGalleries" target="_blank" class="footer">photos</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div id="footerPenultimateRow">
+                    <div class="mb5">find us on these networks...</div>
+                    <a href="http://www.facebook.com/pages/londonbikerscom/34538636794" target="_blank"><img src="/_images/social/facebook.png" alt="find us on Facebook" /></a>
+                    <a href="http://twitter.com/londonbikers" target="_blank"><img src="/_images/social/twitter.png" alt="follow us on Twitter" /></a>
+                    <a href="http://www.youtube.com/user/londonbikers" target="_blank"><img src="/_images/social/youtube.png" alt="find us on YouTube" /></a>
+                    <a href="http://www.flickr.com/groups/63586026@N00/" target="_blank"><img src="/_images/social/flickr.png" alt="find us on Flickr" /></a>
+                </div>
+                <div id="footerBottomRow">
+                    <a href="/advertising" class="footerBottom">advertise</a> | 
+                    <a href="/about" class="footerBottom">about us</a> | 
+                    <a href="mailto:contact@londonbikers.com" class="footerBottom">contact us</a> | 
+                    &copy; all rights reserved | est. 2004
+                </div>
+            </footer>
+        </div>
+        <!--! end of #container -->
+        <script type="text/javascript" src="/js/jquery.prettyPhoto.js"></script>
+        <script type="text/javascript" src="/js/jquery.corner.js"></script>
+        <script type="text/javascript" src="/js/plugins.js"></script>
+        <script type="text/javascript" src="/js/script.js"></script>
+        <!--[if lt IE 7 ]>
+        <script src="/js/dd_belatedpng.js"></script>
+        <![endif]-->
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-142260-1']);
+            _gaq.push(['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+		</script>
+    </body>
+</html>

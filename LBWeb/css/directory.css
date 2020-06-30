@@ -1,0 +1,17 @@
+﻿div.searchBox {
+    padding: 10px;
+    background-color: #7bc7e4;
+    border-bottom: 5px solid #61a4be;
+    text-align: center;
+    color: #2b5363;
+}
+div.searchBox input[type=text] {
+    border: 1px solid #61a4be;
+    background-color: #a8d5e6;
+    padding: 3px;
+}
+#mapCanvas {
+    margin-top: 10px;
+    height: 400px;
+    border: 1px solid #aaa;
+}

@@ -1,0 +1,37 @@
+﻿div.frame {
+    width: 154px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+div.frame img {
+    border: 2px solid #000;
+}
+div.frame img:hover {
+    border: 2px solid #c80000;
+}
+div.frame div {
+    font-size: 0.7em;
+    color: #999;
+}
+span.cmt {
+    font-weight: bold;
+    color: #000;
+}
+div.photos {
+    padding: 5px 10px 10px 10px;
+}
+div.rollBtn {
+    font-size: 0.9em;
+    background-color: #eee;
+    padding: 3px 8px 3px 8px;
+}
+div.rollBtn:hover {
+    background-color: #c80000;
+    color: #eee;
+    cursor: pointer;
+}
+#desc {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    display:none;
+}

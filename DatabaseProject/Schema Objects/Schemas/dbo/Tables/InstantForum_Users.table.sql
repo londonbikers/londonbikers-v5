@@ -1,0 +1,36 @@
+﻿/*CREATE TABLE [dbo].[InstantForum_Users] (
+    [UserID]                     INT            NOT NULL,
+    [PermissionID]               SMALLINT       NOT NULL,
+    [Skin]                       NVARCHAR (255) NOT NULL,
+    [Notes]                      NTEXT          NULL,
+    [Occupation]                 NVARCHAR (255) NOT NULL,
+    [Interests]                  NTEXT          NULL,
+    [Biography]                  NTEXT          NULL,
+    [PostSignature]              NTEXT          NULL,
+    [PostCount]                  INT            NOT NULL,
+    [LastPostDate]               DATETIME       NULL,
+    [LastPMDateStamp]            DATETIME       NOT NULL,
+    [IsAnonymous]                BIT            NOT NULL,
+    [ReceiveEmailFromAdmins]     BIT            NOT NULL,
+    [ReceiveEmailFromMembers]    BIT            NOT NULL,
+    [EnablePM]                   BIT            NOT NULL,
+    [EnablePMPopUp]              BIT            NOT NULL,
+    [ReceivePMsFromAdmins]       BIT            NOT NULL,
+    [ReceivePMEmailNotification] BIT            NOT NULL,
+    [ReceivePMReadReceipts]      BIT            NOT NULL,
+    [CreateSentPMCopy]           BIT            NOT NULL,
+    [ViewSignatures]             BIT            NOT NULL,
+    [ViewImages]                 BIT            NOT NULL,
+    [ViewEmotIcons]              BIT            NOT NULL,
+    [ViewAvatars]                BIT            NOT NULL,
+    [TopicsPerPage]              TINYINT        NOT NULL,
+    [PostsPerPage]               TINYINT        NOT NULL,
+    [DefaultDateFilter]          TINYINT        NOT NULL,
+    [DisplayMode]                TINYINT        NOT NULL,
+    [RichTextBoxTemplate]        TINYINT        NOT NULL,
+    [ExecuteSQL]                 BIT            NOT NULL,
+    [Followers]                  INT            DEFAULT ((0)) NOT NULL
+);*/
+
+
+

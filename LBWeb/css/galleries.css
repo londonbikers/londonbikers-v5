@@ -1,0 +1,109 @@
+﻿#galleriesHead {
+    width: 160px;
+}
+#galleriesTail {
+    width: 520px;
+}
+#galleriesBg {
+    background-color: #eeece8;
+    padding: 10px;
+}
+
+.featureboxgrid {
+	width: 325px;
+	height: 170px;
+	background:#161613;
+	overflow: hidden;
+	position: relative;
+}
+.featureboxgrid img {
+    border: 1px solid #555555;
+}
+.featureCover {
+    padding: 5px;
+    font-size: 0.8em !important;
+    color: #6c6c6c;
+}
+.featureboxgrid div a {
+    text-decoration: none;
+    color: #ccc;
+}
+.fecaption {
+    width: 325px;
+}
+.boxcaption {  
+    float: left;  
+    position: absolute;  
+    background: #000;  
+    height: 100px;  
+    width: 100%;  
+    opacity: .8;  
+    /* For IE 5-7 */  
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);  
+    /* For IE 8 */  
+    -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";  
+}
+.caption .boxcaption {  
+    top: 128px;
+    left: 0px;
+}
+
+/* CATEGORIES */
+#categoriesHead {
+    background-color: #eeece8;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+#categories {
+    font-family: Arial;
+    font-size: 1.4em;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* STATS */
+#stats {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fafafa;
+    font-size: 0.9em;
+}
+span.statValue {
+    font-family: Arial;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #c0bebe;
+}
+
+/* FAVOURITE COLUMNS */
+div.favCol {
+    width: 157px;
+    float: left;
+}
+div.favHead {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5px;
+}
+div.favHeadText {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5px;
+    font-family: 'Yanone Kaffeesatz', arial, serif;
+    font-size: 2.2em;
+    text-transform: uppercase;
+    height: 44px;
+    text-align: center;
+    background-color: #eee;
+    padding-top: 12px;
+}
+div.favGallery { 
+    margin-bottom: 10px;
+}
+div.favGallery h3 {
+    font-size: 1.1em;
+}
+div.favGallery img {
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
+

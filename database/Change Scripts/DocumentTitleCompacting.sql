@@ -1,0 +1,2 @@
+update apollo_content set f_title = right(f_title, len(f_title) - PATINDEX('%: %', f_title) -1) where f_title like '%: %'
+update apollo_content set f_title = right(f_title, len(f_title) - PATINDEX('%:%', f_title)) where f_title like '%:%'

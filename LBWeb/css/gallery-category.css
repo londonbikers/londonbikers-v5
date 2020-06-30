@@ -1,0 +1,19 @@
+﻿div.frame {
+    width: 154px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+div.frame img {
+    border: 2px solid #000;
+}
+div.frame img:hover {
+    border: 2px solid #c80000;
+}
+div.frame div {
+    font-size: 0.7em;
+    color: #999;
+}
+span.cmt {
+    font-weight: bold;
+    color: #000;
+}

@@ -1,0 +1,5 @@
+﻿/*CREATE NONCLUSTERED INDEX [_dta_index_InstantForum_Messages_5_885578193__K15_K3D_K2_K10_4_12_13]
+    ON [dbo].[InstantForum_Messages]([Approved] ASC, [DateStamp] DESC, [ForumID] ASC, [UserID] ASC)
+    INCLUDE([Subject], [LastPost], [TopicID]) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF, ONLINE = OFF, MAXDOP = 0)
+    ON [PRIMARY];*/
+

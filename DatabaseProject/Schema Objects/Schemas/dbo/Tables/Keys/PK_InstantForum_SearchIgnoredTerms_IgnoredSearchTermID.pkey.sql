@@ -1,0 +1,3 @@
+﻿/*ALTER TABLE [dbo].[InstantASP_IgnoredSearchTerms]
+    ADD CONSTRAINT [PK_InstantForum_SearchIgnoredTerms_IgnoredSearchTermID] PRIMARY KEY CLUSTERED ([IgnoredSearchTermID] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF);*/
+

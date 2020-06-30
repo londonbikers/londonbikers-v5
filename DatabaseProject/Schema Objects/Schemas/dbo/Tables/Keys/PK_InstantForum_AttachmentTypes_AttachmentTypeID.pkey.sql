@@ -1,0 +1,3 @@
+﻿/*ALTER TABLE [dbo].[InstantForum_AttachmentTypes]
+    ADD CONSTRAINT [PK_InstantForum_AttachmentTypes_AttachmentTypeID] PRIMARY KEY CLUSTERED ([AttachmentTypeID] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF);*/
+

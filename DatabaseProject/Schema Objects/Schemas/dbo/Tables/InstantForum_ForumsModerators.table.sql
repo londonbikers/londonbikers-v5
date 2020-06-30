@@ -1,0 +1,26 @@
+﻿/*CREATE TABLE [dbo].[InstantForum_ForumsModerators] (
+    [ForumModeratorID]    INT IDENTITY (1, 1) NOT NULL,
+    [ForumID]             INT NOT NULL,
+    [UserID]              INT NOT NULL,
+    [ApproveTopics]       BIT /*DEFAULT ((0))*/ NOT NULL,
+    [ApprovePosts]        BIT /*DEFAULT ((0))*/ NOT NULL,
+    [EditTopics]          BIT /*DEFAULT ((0))*/ NOT NULL,
+    [EditPosts]           BIT /*DEFAULT ((0))*/ NOT NULL,
+    [DeleteTopics]        BIT /*DEFAULT ((0))*/ NOT NULL,
+    [DeletePosts]         BIT /*DEFAULT ((0))*/ NOT NULL,
+    [PinTopics]           BIT /*DEFAULT ((0))*/ NOT NULL,
+    [UnpinTopics]         BIT /*DEFAULT ((0))*/ NOT NULL,
+    [LockTopics]          BIT /*DEFAULT ((0))*/ NOT NULL,
+    [UnlockTopics]        BIT /*DEFAULT ((0))*/ NOT NULL,
+    [MoveTopics]          BIT /*DEFAULT ((0))*/ NOT NULL,
+    [UnmoveTopics]        BIT /*DEFAULT ((0))*/ NOT NULL,
+    [QueueTopics]         BIT /*DEFAULT ((0))*/ NOT NULL,
+    [QueuePosts]          BIT /*DEFAULT ((0))*/ NOT NULL,
+    [OpenPolls]           BIT /*DEFAULT ((0))*/ NOT NULL,
+    [ClosePolls]          BIT /*DEFAULT ((0))*/ NOT NULL,
+    [ShowIPAddress]       BIT /*DEFAULT ((0))*/ NOT NULL,
+    [EmailForNewTopics]   BIT /*DEFAULT ((0))*/ NOT NULL,
+    [EmailForNewPosts]    BIT /*DEFAULT ((0))*/ NOT NULL,
+    [EmailForEditedPosts] BIT /*DEFAULT ((0))*/ NOT NULL
+);*/
+

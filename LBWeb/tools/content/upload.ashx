@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="upload.ashx.cs" Class="Tetron.Tools.Content.UploadHandler" %>

@@ -1,0 +1,38 @@
+﻿/*CREATE TABLE [dbo].[InstantForum_Forums] (
+    [ForumID]             INT             IDENTITY (1, 1) NOT FOR REPLICATION NOT NULL,
+    [Name]                NVARCHAR (400)  NOT NULL,
+    [Description]         NVARCHAR (1000) NOT NULL,
+    [SortOrder]           SMALLINT        NOT NULL,
+    [ClosedForum]         BIT             NOT NULL,
+    [ModerateType]        TINYINT         NOT NULL,
+    [ForumPassword]       VARCHAR (255)   NULL,
+    [TotalTopics]         INT             NOT NULL,
+    [TotalPosts]          INT             NOT NULL,
+    [ParentID]            INT             NOT NULL,
+    [WrapperID]           SMALLINT        NOT NULL,
+    [Skin]                NVARCHAR (255)  NOT NULL,
+    [DefaultDateFilter]   TINYINT         NOT NULL,
+    [DefaultSortBy]       TINYINT         NOT NULL,
+    [DefaultSortOrder]    TINYINT         NOT NULL,
+    [ForumNotes]          NTEXT           NULL,
+    [Expanded]            BIT             NOT NULL,
+    [AllowTopics]         BIT             NOT NULL,
+    [AllowSearching]      BIT             NOT NULL,
+    [IncreaseMemberPosts] BIT             NOT NULL,
+    [RedirectURL]         NVARCHAR (355)  NOT NULL,
+    [RedirectClicks]      INT             NOT NULL,
+    [RedirectTarget]      NVARCHAR (15)   NOT NULL,
+    [DisplayMode]         TINYINT         NOT NULL,
+    [TopicsPerPage]       TINYINT         NOT NULL,
+    [MessagesPerPage]     TINYINT         NOT NULL,
+    [IsCategory]          BIT             NOT NULL,
+    [LastPosterPostID]    INT             NOT NULL,
+    [LastPosterUserID]    INT             NOT NULL,
+    [LastPosterUsername]  NVARCHAR (255)  NOT NULL,
+    [LastPosterSubject]   NVARCHAR (300)  NOT NULL,
+    [LastPosterDate]      DATETIME        NULL,
+    [NameEncoded]         NVARCHAR (400)  DEFAULT ('') NOT NULL
+);*/
+
+
+

@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="editorial-loader.asmx.cs" Class="Tetron.EditorialLoader" %>

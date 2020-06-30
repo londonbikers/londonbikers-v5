@@ -1,0 +1,19 @@
+GO
+/****** Object:  Table [dbo].[ContentImageTypes]    Script Date: 03/21/2006 20:12:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[ContentImageTypes](
+	[ID] [tinyint] NOT NULL,
+	[Name] [varchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+ CONSTRAINT [PK_ContentImageTypes] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF

@@ -1,0 +1,1 @@
+ INSERT INTO [dbo].[Sites] ([Name] ,[URL]) VALUES ('londonbikers.com', 'http://londonbikers.com/')

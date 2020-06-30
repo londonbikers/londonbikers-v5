@@ -1,0 +1,99 @@
+body, td { font-family: Verdana; font-size: 11px; color: #000000; }
+h1 { font-family: Arial; font-size: 16px; font-weight: bold; color: #282828; }
+.ThumbCell { background-color: #D4D5D8; padding: 7px; width: 10px; }
+.tableContainer { border-style: solid; border-width: 1px; border-color: #cccccc; }
+.tab-active { font-family: Verdana; font-size: 10px; color: #435327; }
+.tab-inactive { font-family: Verdana; font-size: 10px; color: #686C61; }
+.normal { font-family: Verdana; font-size: 11px; color: #FFFFFF; }
+.darktext { font-family: Verdana; font-size: 10px; color: #000000; }
+.alert { font-family: Verdana; font-size: 11px; color: red; }
+.text { font-family: Verdana; font-size: 11px; color: #000000; }
+.lighttext { font-family: Verdana; font-size: 11px; color: #626161; }
+.redtext { font-family: Verdana; font-size: 11px; color: #703636; }
+.checkbox { border-width: 0px; }
+.formnoborder { border-width: 0px; }
+.textbox { border-style: solid; background-color: #FFFFFF; color: #000000; border-width: 1px; border-color: #BCBCBC; font-family: Verdana; font-size: 11px; margin-top: 0px; margin-bottom: 0px; }
+.smallquote { font-family: Verdana; font-size: 10px; color: #000000; }
+.pagetitle { font-family: Verdana; font-size: 13px; color: #000000; font-weight: bold; }
+.td_dark { color: #3C4130; }
+.lightgrey { font-family: Verdana; font-size: 11px; color: #878789; }
+.btn { font-family: Verdana; font-size: 11px; }
+.prompt {color: Red; font-family: Verdana; }
+
+tr.normal { font-family: Verdana; font-size: 11px; color: #000000; }
+td.TableBlankCell { padding: 4px; background-color: #F4F2F2; font-size: 11px; }
+td.TableHeaderCell { padding: 4px; background-color: #EAE8E8; font-size: 11px; color: #757575; font-weight: bold; }
+td.GalleryThumbDark { padding: 7px; background-color: #EBECEE; }
+td.smalltext { font-family: Verdana; font-size: 10px; color: #000000; }
+td.normal { font-family: Verdana; font-size: 11px; color: #000000; }
+td.GridCellLowLight { color: #829075; }
+hr.thinsilver { border: 0px; color: #CCCCCC; height: 1px; background-color: #CCCCCC; width: 100%; }
+
+span.Prompt { font-family: Verdana; font-size: 12px; color: red; }
+div.bevel { border-top: 1px solid #808080; border-left: 1px solid #808080; border-bottom: 1px solid #ffffff; border-right: 1px solid #ffffff; background: #d4d0c8; }
+div.GreyNoteBox { border-style: dotted; border-width: 1px; border-color: #cccccc; background-color: #eaeaea; padding: 10px; color: #3C3B3B; font-size: 11px; font-family: Verdana; text-align: justify; line-height: 17px; }
+div.NoteBox { border-style: dotted; border-width: 1px; border-color: #cccccc; background-color: #EFF3F5; padding: 10px; color: #3C3B3B; font-size: 11px; font-family: Verdana; text-align: justify; line-height: 17px; }
+div.GreenNoteBox { border-style: dotted; border-width: 1px; border-color: #cccccc; background-color: #f1f5e9; padding: 10px; color: #3C3B3B; font-size: 11px; font-family: Verdana; text-align: justify; line-height: 17px; }
+div.LightNoteBox { border-style: dotted; border-width: 1px; border-color: #cccccc; background-color: #F5F5F5; padding: 10px; color: #3C3B3B; font-size: 11px; font-family: Verdana; line-height: 17px; }
+div.General { font-family: Verdana; font-size: 11px; }
+
+div.SilverBox { border: solid 1px #BCBCBC; padding: 10px; background-color: #F5F5F5; }
+div.YellowBox { border: solid 1px #DFDFDB; padding: 10px; background-color: #FFFFF1; }
+div.ErrorBox { border: dotted 1px #9f0000; background-color: #ffecec; padding: 10px; color: #4a0606; font-size: 11px; font-family: Verdana; line-height: 17px; }
+
+FORM { border-width: 0px; margin-top: 0px; margin-bottom: 0px; }
+TEXTAREA { border-style: solid; background-color: #FFFFFF; color: #000000; border-width: 1px; border-color: #BCBCBC; font-family: Verdana; font-size: 11px; padding: 5px; }
+INPUT.box { border-style: solid; background-color: #FFFFFF; color: #000000; border-width: 1px; border-color: #BCBCBC; font-family: Verdana; font-size: 11px; padding: 2px; }
+SELECT { border-style: solid; background-color: #FFFFFF; color: #000000; border-width: 1px; border-color: #BCBCBC; font-family: Verdana; font-size: 11px; }
+
+input.TextBox { padding: 4px; font-family: Verdana; font-size: 11px; }
+input.SoftBtn { padding: 3px 5px 3px 5px; font-family: Verdana; font-size: 11px; }
+
+input.MedTextBox { font-family: Verdana; font-size: 12px; color: #000000; background-color: #F0F0F0; border-color: #8C8B8B; border-width: 1px; border-style: solid; margin-bottom: 5px; vertical-align: middle; padding: 2px; }
+input.ActionBtn { border-style: solid; background-color: #C5D9E0; color: #382D14; border-width: 1px; border-color: #8C8B8B; font-family: Verdana; font-size: 8pt; padding-left: 5px; padding-right: 5px; padding-top: 2px; padding-bottom: 1px; }
+input.BoxSubmit { margin-top: 10px; border-style: solid; background-color: #E0DFDF; color: #382D14; border-width: 1px; border-color: #8C8B8B; font-family: Verdana; font-size: 8pt; padding-left: 5px; padding-right: 5px; padding-top: 1px; padding-bottom: 1px; }
+input.BigBtn { font-size: 1.1em; padding: 5px; font-family: Verdana; }
+input.Normal { font-family: Verdana; font-size: 11px; color: #000000; background-color: #F0F0F0; border-color: #8C8B8B; border-width: 1px; border-style: solid; vertical-align: middle; padding: 2px; }
+textarea.FullWidth { font-family: Verdana; font-size: 12px; color: #000000; background-color: #F0F0F0; border-color: #8C8B8B; border-width: 1px; border-style: solid; margin-bottom: 5px; padding: 2px; width: 100%; height: 75px; }
+/* -------------------------- */
+a:link.CopperLink { color: #A94B26; text-decoration: underline; }
+a:visited.CopperLink { color: #A94B26; text-decoration: underline; }
+a:active.CopperLink { color: #A94B26; text-decoration: underline; }
+a:hover.CopperLink { color: red; text-decoration: underline; }
+/* -------------------------- */
+a:link.BlueLink { color: #396CB7; text-decoration: underline; }
+a:visited.BlueLink { color: #396CB7; text-decoration: underline; }
+a:active.BlueLink { color: #396CB7; text-decoration: underline; }
+a:hover.BlueLink { color: red; text-decoration: underline; }
+/* -------------------------- */
+a.BlackLink { color: Black; text-decoration: underline; }
+a:link.BlackLink { color: black; text-decoration: underline; }
+a:visited.BlackLink { color: black; text-decoration: underline; }
+a:hover.BlackLink { color: red; text-decoration: underline; }
+a:active.BlackLink { color: black; text-decoration: underline; }
+/* -------------------------- */
+a.GreyLink { color: #6e6e6e !important; text-decoration: underline !important; }
+a:link.GreyLink { color: #6e6e6e !important; text-decoration: underline !important; }
+a:visited.GreyLink { color: #6e6e6e !important; text-decoration: underline !important; }
+a:hover.GreyLink { color: red !important; text-decoration: underline !important; }
+a:active.GreyLink { color: #6e6e6e !important; text-decoration: underline !important; }
+/* -------------------------- */
+a:link.activetab { color: #435327; text-decoration: none; }
+a:visited.activetab { color: #435327; text-decoration: none; }
+a:active.activetab { color: #435327; text-decoration: none; }
+a:hover.activetab { color: #000000; text-decoration: underline; }
+/* -------------------------- */
+a:link.inactivetab { color: #686C61; text-decoration: none; }
+a:visited.inactivetab { color: #686C61; text-decoration: none; }
+a:active.inactivetab { color: #686C61; text-decoration: none; }
+a:hover.inactivetab { color: #000000; text-decoration: underline; }
+/* -------------------------- */
+a:link.options { color: #5D644C; text-decoration: none; }
+a:visited.options { color: #5D644C; text-decoration: none; }
+a:active.options { color: #5D644C; text-decoration: none; }
+a:hover.options { color: #000000; text-decoration: none; }
+/* -------------------------- */
+a:link { color: #6C779D; text-decoration: none; }
+a:visited { color: #6C779D; text-decoration: none; }
+a:active { color: #6C779D; text-decoration: none; }
+a:hover { color: #AC5B5B; text-decoration: underline; }

@@ -1,0 +1,834 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>skmRss</name>
+    </assembly>
+    <members>
+        <member name="T:skmRss.RssFeedItemCollection">
+            <summary>
+            RssItemCollection represents a collection of <see cref="T:skmRss.RssFeedItem"/> objects.  The <see cref="T:skmRss.RssFeed"/>
+            control has a property called <b>Items</b> which is of type RssFeedItemCollection, and allows programmatic
+            access to the RssFeed control's RSS items.
+            </summary>
+        </member>
+        <member name="M:skmRss.RssFeedItemCollection.#ctor(System.Collections.ArrayList)">
+            <summary>
+            Creates a new RssItemCollection based on a populated ArrayList
+            </summary>
+            <param name="items">An ArrayList of RssItem members.</param>
+        </member>
+        <member name="M:skmRss.RssFeedItemCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies the elements of the RssItemCollection to an array, starting at a particular array index.
+            </summary>
+            <param name="array">The one-dimensional Array that is the destination of the elements copied from ICollection. The Array must have zero-based indexing.</param>
+            <param name="index">The zero-based index in array at which copying begins.</param>
+        </member>
+        <member name="M:skmRss.RssFeedItemCollection.GetEnumerator">
+            <summary>
+            Returns an IEnumerator that can be used to enumerate through the RssItemCollection.
+            </summary>
+            <returns>An enumerator that can be used to enumerate through the RssItemCollection.</returns>
+        </member>
+        <member name="P:skmRss.RssFeedItemCollection.Count">
+            <summary>
+            Returns the number of elements in the RssItemCollection.
+            </summary>
+        </member>
+        <member name="P:skmRss.RssFeedItemCollection.Item(System.Int32)">
+            <summary>
+            Retrieves a particular RssItem instance from the RssItemCollection.
+            </summary>
+        </member>
+        <member name="T:skmRss.RssFeed">
+            <summary>
+            The RssFeed Web control displays a DataGrid-like view of an RSS feed.
+            Examples of the RssFeed in action can be seen at <a href="http://aspnet.4guysfromrolla.com/blogs/aspnet.aspx">http://aspnet.4guysfromrolla.com/blogs/aspnet.aspx</a>
+            and <a href="http://scottonwriting.net/demos/RssFeedDemos.aspx">http://scottonwriting.net/demos/RssFeedDemos.aspx</a>.
+            </summary>
+            <example>
+            [Visual Basic]<code>
+            &lt;%@ Register TagPrefix="skm" Namespace="skmRss" Assembly="skmRss" %&gt;
+            &lt;skm:RssFeed runat="server" id="myFeed"&gt;&lt;/skm:RssFeed&gt;
+            
+            &lt;script runat="server" language="VB"&gt;
+            	Sub Page_Load(sender as Object, e as EventArgs)
+            		myFeed.DataSource = "http://www.myserver.com/Rss.xml"
+            		myFeed.DataBind()
+            	End Sub
+            &lt;/script&gt;</code>
+            [C#]<code>
+            &lt;%@ Register TagPrefix="skm" Namespace="skmRss" Assembly="skmRss" %&gt;
+            &lt;skm:RssFeed runat="server" id="myFeed"&gt;&lt;/skm:RssFeed&gt;
+            
+            &lt;script runat="server" language="C#"&gt;
+            	void Page_Load(object sender, EventArgs e) {
+            		myFeed.DataSource = "http://www.myserver.com/Rss.xml";
+            		myFeed.DataBind();
+            	}
+            &lt;/script&gt;</code>
+            </example>
+            <remarks>RssFeed works with RSS feeds.  The RSS 2.0 specification
+            can be viewed at: <a href="http://blogs.law.harvard.edu/tech/rss">http://blogs.law.harvard.edu/tech/rss</a>.<p />
+            The RSS 0.92 specification can be viewed at: <a href="http://backend.userland.com/rss092">http://backend.userland.com/rss092</a>.
+            <p /><b>Limitations:</b> RssFeed does not work if the connection to the Internet is through a proxy.  To add
+            proxy support, you'll need to use the WebProxy class when making an outgoing connection.  See
+            <a href="http://scottonwriting.net/sowblog/posts/406.aspx#429">http://scottonwriting.net/sowblog/posts/406.aspx#429</a> for more
+            information.</remarks>
+        </member>
+        <member name="M:skmRss.RssFeed.OnItemCreated(skmRss.RssFeedItemEventArgs)">
+            <summary>
+            Raises the <see cref="E:skmRss.RssFeed.ItemCreated"/> event.  This allows you to provide a custom handler for the event.
+            </summary>
+            <remarks>The <b>ItemCreated</b> event is raised when an item in the <see cref="T:skmRss.RssFeed"/> control is created, both during round-trips and at the time data is bound to the control.<p/>
+            The <b>ItemCreated</b> event is commonly used to control the content and appearance of a row in the <see cref="T:skmRss.RssFeed"/> control.</remarks>
+            <param name="e">A <see cref="T:skmRss.RssFeedItemEventArgs"/> that contains event data.</param>
+        </member>
+        <member name="M:skmRss.RssFeed.OnItemDataBound(skmRss.RssFeedItemEventArgs)">
+            <summary>
+            Raises the <see cref="E:skmRss.RssFeed.ItemDataBound"/> event.  This allows you to provide a custom handler for the event.
+            </summary>
+            <remarks>The <b>ItemDataBound</b> event is raised after an item is data bound to the <see cref="T:skmRss.RssFeed"/> control. This event provides you with the last opportunity to access the data item before it is displayed on the client. After this event is raised, the data item is nulled out and no longer available.</remarks>
+            <param name="e">A <see cref="T:skmRss.RssFeedItemEventArgs"/> that contains event data.</param>
+        </member>
+        <member name="M:skmRss.RssFeed.OnItemCommand(skmRss.RssFeedItemCommandEventArgs)">
+            <summary>
+            Raises the <see cref="E:skmRss.RssFeed.ItemCommand"/> event.  This allows you to provide a custom handler for the event.
+            </summary>
+            <remarks>The <b>ItemCommand</b> event is raised when any button is clicked in the <see cref="T:skmRss.RssFeed"/> control. 
+            This event is commonly used to handle buttons controls with a custom <b>CommandName</b> value.</remarks>
+            <param name="e">A <see cref="T:skmRss.RssFeedItemCommandEventArgs"/> that contains event data.</param>
+        </member>
+        <member name="M:skmRss.RssFeed.DataBind">
+            <summary>
+            Binds the control and all its child controls to the data source specified by the <see cref="P:skmRss.RssFeed.DataSource"/> property.
+            </summary>
+            <remarks>
+            To bind the data to the <see cref="T:skmRss.RssFeed"/> control, perform the following two steps:
+            <list type="number">
+            	<item>Set the <see cref="P:skmRss.RssFeed.DataSource"/>.</item>
+            	<item>Call the DataBind() method.</item>
+            </list>
+            You can also (between steps 1 and 2), indicate that a proxy class should be used via the <see cref="P:skmRss.RssFeed.Proxy"/>
+            property.
+            The DataBind() method only needs to be called on the page's first load.  The RSS items
+            are, by default, stored in the ViewState, so they persist across postbacks.</remarks>
+            <exception cref="T:skmRss.Engine.FeedTimeoutException">When using remote RSS feeds, if the time to access the feed exceeds the
+            specified <see cref="P:skmRss.RssFeed.Timeout"/>, this exception is thrown.</exception>
+        </member>
+        <member name="M:skmRss.RssFeed.CreateChildControls">
+            <summary>
+            Notifies server controls that use composition-based implementation to create any child controls they contain in preparation for posting back or rendering.
+            </summary>
+            <remarks>When you develop a composite or templated server control, you must override this method.</remarks>
+        </member>
+        <member name="M:skmRss.RssFeed.CreateControlStyle">
+            <summary>
+            The CreateControl() style method is called internally by WebControl to create the control's style.
+            Since RssFeed is displayed in a table, we want to return a TableStyle instance (as opposed to a generic
+            Style instance).
+            </summary>
+            <returns>A TableStyle instance.</returns>
+        </member>
+        <member name="M:skmRss.RssFeed.PrepareControlHierarchyForRendering">
+            <summary>
+            PrepareControlHierarchyForRendering() applies styles to the control hierarchy immediately before rendering.
+            </summary>
+        </member>
+        <member name="M:skmRss.RssFeed.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Render generates the control's HTML markup.
+            </summary>
+            <param name="writer">The HtmlTextWriter instance that is populated with the control's rendered HTML markup.</param>
+        </member>
+        <member name="M:skmRss.RssFeed.SaveViewState">
+            <summary>
+            Saves the ViewState - needed for programmatic changes to the styles over postbacks.
+            </summary>
+            <returns>An object representing the control's composite ViewState.</returns>
+        </member>
+        <member name="M:skmRss.RssFeed.LoadViewState(System.Object)">
+            <summary>
+            Loads the ViewState of the control.
+            </summary>
+            <param name="savedState">The state saved in the previous postback.</param>
+        </member>
+        <member name="M:skmRss.RssFeed.TrackViewState">
+            <summary>
+            Informs the styles to begin tracking their ViewState.
+            </summary>
+        </member>
+        <member name="E:skmRss.RssFeed.ItemCreated">
+            <summary>
+            Occurs when an RssFeedItem is created.
+            </summary>
+        </member>
+        <member name="E:skmRss.RssFeed.ItemDataBound">
+            <summary>
+            Occurs after an RssFeedItem is databound.
+            </summary>
+        </member>
+        <member name="E:skmRss.RssFeed.ItemCommand">
+            <summary>
+            Occurs when a button in an RssFeedItem is clicked.
+            </summary>
+        </member>
+        <member name="P:skmRss.RssFeed.HeaderStyle">
+            <summary>
+            A TableItemStyle object that contains the style properties for the header section of the RssFeed table. The default value is an empty TableItemStyle object.
+            </summary>
+            <value>A TableItemStyle object that contains the style properties of the heading section in the <see cref="T:skmRss.RssFeed"/> control. 
+            The default value is an empty TableItemStyle object.</value>
+            <remarks>Use this property to provide a custom style for the heading section of the <see cref="T:skmRss.RssFeed"/> control. 
+            Common style attributes that can be adjusted include forecolor, backcolor, font, and content alignment 
+            within the cell. Providing a different style enhances the appearance of the <see cref="T:skmRss.RssFeed"/> control.</remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.ItemStyle">
+            <summary>
+            A TableItemStyle object that contains the style properties for each RssItem in the RssFeed table. The default value is an empty TableItemStyle object.
+            </summary>
+            <value>A TableItemStyle object that contains the style properties of the items in the <see cref="T:skmRss.RssFeed"/> control. 
+            The default value is an empty TableItemStyle object.</value>
+            <remarks>Use this property to provide a custom style for the item cells of the RssFeed control. 
+            Common style attributes that can be adjusted include forecolor, backcolor, font, and content alignment 
+            within the cell.</remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.AlternatingItemStyle">
+            <summary>
+            A TableItemStyle object that contains the style properties for each alternating RssItem in the RssFeed table. The default value is an empty TableItemStyle object.
+            </summary>
+            <value>A TableItemStyle object that contains the style properties of the alternating items in the <see cref="T:skmRss.RssFeed"/> control. 
+            The default value is an empty TableItemStyle object.</value>
+            <remarks>Use this property to provide a custom style for the alternating item cells of the RssFeed control. 
+            Common style attributes that can be adjusted include forecolor, backcolor, font, and content alignment 
+            within the cell.</remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.BackImageUrl">
+            <summary>
+            Gets or sets the URL of an image to display in the background of the <see cref="T:skmRss.RssFeed"/> control.
+            </summary>
+            <value>
+            The URL of an image to display in the background of a table control. The default is String.Empty.
+            </value>
+            <remarks>Use the <b>BackImageUrl</b> property to specify an image to display in the background of the <see cref="T:skmRss.RssFeed"/> control.</remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.CellPadding">
+            <summary>
+            The distance (in pixels) between the contents of a cell and the cell's border. The default is -1, which indicates that this property is not set.
+            </summary>
+            <remarks>Use the <b>CellPadding</b> property to control the spacing between the contents of a cell and the cell's border. The padding amount specified is added to all four sides of the cell.</remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.CellSpacing">
+            <summary>
+            The distance (in pixels) between table cells. The default is -1, which indicates that this property is not set.
+            </summary>
+            <remarks>Use the <b>CellSpacing</b> property to control the spacing between adjacent cells in a data listing 
+            control. This spacing is applied both vertically and horizontally. The cell spacing is uniform for the 
+            entire data listing control. Individual cell spacing between each row or column cannot be specified.</remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.GridLines">
+            <summary>
+            One of the GridLines enumeration values. The default is Both.
+            </summary>
+            <remarks>
+            Use the <b>GridLines</b> property to specify whether the border between the cells of a data listing control is 
+            displayed. This property is set with one of the <b>GridLines</b> enumeration values. The following table 
+            lists the possible values:
+            <list type="table">
+            	<listheader><term>Value</term><term>Description</term></listheader>
+            	<item><term>None</term><description>No cell border is displayed.</description></item>
+            	<item><term>Horizontal</term><description>Only the upper and lower borders of the cells in a data listing control are displayed.</description></item>
+            	<item><term>Vertical</term><description>Only the left and right borders of the cells in the data list control are displayed.</description></item>
+            	<item><term>Both</term><description>All borders of the cells in a data listing control are displayed.</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.HorizontalAlign">
+            <summary>
+            One of the HorizontalAlign enumeration values. The default is NotSet.
+            </summary>
+            <remarks>Use the <b>HorizontalAlign</b> property to specify the horizontal alignment of a data listing control 
+            within its container. This property is set with one of the HorizontalAlign enumeration values.</remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.HeaderText">
+            <summary>
+            Gets or sets the header text to display at the top of the list of RSS feed items.
+            </summary>
+            <value>The (optional) value to display at the top fo the RSS feed items.  The default is String.Empty.</value>
+            <remarks>The <b>HeaderText</b> will only show up if <see cref="P:skmRss.RssFeed.ShowHeader"/> is set to True.<p/>
+            If <b>HeaderText</b> is <i>not</i> specified and <see cref="P:skmRss.RssFeed.ShowHeader"/> is true, then the RSS/RDF's 
+            title is used, if present.</remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.HeaderNavigateUrl">
+            <summary>
+            Gets or sets the URL to link the header to.
+            </summary>
+            <remarks>
+            The header is only rendered as a hyperlink if
+            <see cref="P:skmRss.RssFeed.ShowHeader"/> is True and <see cref="P:skmRss.RssFeed.LinkHeader"/> is True.<p/>If no value is
+            provided for <b>HeaderNavigateUrl</b>, the RSS/RDF's link URL is used, if present.
+            </remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.ShowHeader">
+            <summary>
+            Gets or sets whether the header should be shown.
+            </summary>
+            <value>A true or false value that indicates if the header is shown.  The default is True.</value>
+            <remarks>The header appears above the RSS feed items, and is composed of precisely one TableCell (regardless
+            of how many TableCells make up the feed items).</remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.LinkHeader">
+            <summary>
+            Gets or sets whether the header should be rendered as a hyperlink.
+            </summary>
+            <value>A true or false value that indicates if the header text is rendered as a hyperlink.  
+            The default is True.</value>
+        </member>
+        <member name="P:skmRss.RssFeed.DateFormatString">
+            <summary>
+            Gets or sets the DateFormatString to be used when viewing the published date for RssItems.  
+            </summary>
+            <remarks>The default value is g, which displays the short date format followed by a space 
+            followed by the short time format.
+            </remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.ShowCategory">
+            <summary>
+            Specifies whether the category for the RssItems are shown.
+            </summary>
+            <value>A true or false value that indicates if the category is shown.  Default value is False.</value>
+        </member>
+        <member name="P:skmRss.RssFeed.ShowPubDate">
+            <summary>
+            Specifies if the RssItem's published date is displayed.  Default value is True.
+            </summary>
+            <remarks>The format of the date/time can be configured via the <see cref="P:skmRss.RssFeed.DateFormatString"/> property.</remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.ShowEnclosure">
+            <summary>
+            Specifies if the RssItem's enclosure is displayed.  Default value is False.
+            </summary>
+        </member>
+        <member name="P:skmRss.RssFeed.EnclosureLinkText">
+            <summary>
+            Specifies the RssItem's enclosure link text.  Default is "Download"
+            </summary>
+        </member>
+        <member name="P:skmRss.RssFeed.MaxItems">
+            <summary>
+            Determines the maximum number of items to show in the list of items.
+            </summary>
+        </member>
+        <member name="P:skmRss.RssFeed.CacheDuration">
+            <summary>
+            Indicates the number of minutes the RSS syndication feed is cached.
+            </summary>
+            <remarks>  A value of 0 indicates that no
+            caching should be performed.  The default value is 60.<p/>
+            The RSS feed is cached using the in-memory ASP.NET data cache. Therefore, the RSS feed
+            might exist in the cache for a time period less than specified due to scavenging or Web server
+            restarts.</remarks>
+            <exception cref="T:System.ArgumentException">Raised if a <b>CacheDuration</b> value less than 0 is entered.</exception>
+        </member>
+        <member name="P:skmRss.RssFeed.Target">
+            <summary>
+            If specified, indicates what <code>target</code> the hyperlink will open in.
+            </summary>
+            <remarks>The default behavior of <see cref="T:skmRss.RssFeed"/> is to have each RssItem's title rendered as a 
+            hyperlink, provided that there is a link element in the RSS syndication feed for the item in question.  
+            <b>Target</b> specifies the target to open this link in.<p/>
+            To have the link open in a new window, set the target to <code>_blank</code></remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.Timeout">
+            <summary>
+            Specifies the amount of time (in milliseconds) to try to access the requested RSS feed.
+            </summary>
+            <remarks>Must be a value greater than 0.  When reading an RSS feed from an external URL, indicates 
+            the amount of time (in milliseconds) to wait for the response.  If the request takes longer
+            than the time specified by <b>Timeout</b>, the RSS feed control throws a <see cref="T:skmRss.Engine.FeedTimeoutException"/> exception.</remarks>
+            <value>The maximum number of milliseconds to wait for a response from a remote RSS feed.  
+            Defaults to a value of 5000 (5 seconds).</value>
+            <exception cref="T:System.ArgumentException">Raised if a <b>Timeout</b> value less than or equal to 500 is entered.</exception>
+        </member>
+        <member name="P:skmRss.RssFeed.Proxy">
+            <summary>
+            Specifies a WebProxy to use to connect to an external URL.
+            </summary>
+            <value>An instance of an object that implements IWebProxy.</value>
+            <remarks>If you are accessing a remote RSS feed through a website that uses a proxy, you will need
+            to create a functional WebProxy object and assign it to the <b>Proxy</b> property.  This property needs to be assigned
+            <i>before</i> the call to <see cref="M:skmRss.RssFeed.DataBind"/> is made (assuming you are accessing a remote RSS feed and
+            need to tunnel through a proxy).<p/><b>Note:</b> The <b>Proxy</b> property is <i>not</i> stored in ViewState,
+            meaning it is <i>not</i> persisted across postbacks.  Each time, then, that you call <see cref="M:skmRss.RssFeed.DataBind"/> be
+            certain to create a new IWebProxy object and assign it to this property.</remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.Credentials">
+            <summary>
+            Specifies credentials to use to connect to an external URL that required authentication.
+            </summary>
+            <value>An instance of an object that implements ICredentials.</value>
+            <remarks>If you are accessing a remote RSS feed through a website that uses authentication, you will need
+            to create a functional ICredentials object and assign it to the <b>Credentials</b> property.  This 
+            property needs to be assigned <i>before</i> the call to <see cref="M:skmRss.RssFeed.DataBind"/> is made (assuming you are accessing a remote RSS feed
+            that requires authentication).<p/><b>Note:</b> The <b>Credentials</b> property is <i>not</i> stored in ViewState,
+            meaning it is <i>not</i> persisted across postbacks.  Each time, then, that you call <see cref="M:skmRss.RssFeed.DataBind"/> be
+            certain to create a new ICredentials object and assign it to this property.</remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.ItemTemplate">
+            <summary>
+            Gets or sets the template for the items in the <see cref="T:skmRss.RssFeed"/> control.
+            </summary>
+            <value>A System.Web.UI.ITemplate that contains the template for the items in the <see cref="T:skmRss.RssFeed"/> control. 
+            The default value is a null reference (Nothing in Visual Basic).</value>
+            <remarks>Use the <b>ItemTemplate</b> property to control the contents of the items in the RssFeed control. 
+            The appearance of the items in the RssFeed control is controlled by the <see cref="P:skmRss.RssFeed.ItemStyle"/> property.<p/>
+            The contents of the <b>ItemTemplate</b> can be customized via the <see cref="T:skmRss.Engine.RssItem"/> properties.  The syntax
+            to use is illustrated in the example.
+            </remarks>
+            <example><code>
+            &lt;%@ Register TagPrefix="skm" Namespace="skmRss" Assembly="skmRss" %&gt;
+            &lt;skm:RssFeed runat="server" id="myFeed"&gt;
+              &lt;ItemTemplate&gt;
+                &lt;# DataBinder.Eval(Container.DataItem, "Title") %&gt;
+                &lt;br /&gt;
+                &lt;i&gt;&lt;# DataBinder.Eval(Container.DataItem, "PubDate") %&gt;&lt;/i&gt;
+              &lt;/ItemTemplate&gt;
+            &lt;/skm:RssFeed&gt;</code>
+            </example>
+        </member>
+        <member name="P:skmRss.RssFeed.HeaderTemplate">
+            <summary>
+            Specifies the optional HeaderTemplate for the control.
+            </summary>
+            <remarks>The <b>HeaderTemplate</b> cannot contain any databinding syntax - just HTML and Web control syntax.</remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.DataSource">
+            <summary>
+            Sets the DataSource (the RSS feed) for the control.
+            </summary>
+            <value>The <see cref="T:skmRss.RssFeed"/>'s DataSource - used for databinding.  Can be assigned a file path, URL,
+            XmlReader, TextReader, XPathDocument, or <see cref="T:skmRss.Engine.RssDocument"/> instance.</value>
+            <example>[C#]<code>
+            // The DataSource can be a URL
+            RssFeed1.DataSource = "http://www.ScottOnWriting.NET/sowBlog/rss.aspx";
+            
+            // The DataSource can be an XPathDocument
+            XPathDocument doc = new XPathDocument("http://ScottOnWriting.NET/sowBlog/rss.aspx");
+            RssFeed1.DataSource = doc;
+            
+            // You can load an XML string into the control too!
+            StringReader sr = new StringReader("...XML string...");
+            RssFeed1.DataSource = sr;
+            
+            // You can also use an RssDocument
+            RssEngine engine = new RssEngine();
+            RssDocument doc = engine.GetDataSource("http://ScottOnWriting.NET/sowBlog/rss.aspx");
+            RssFeed1.DataSource = doc;
+            </code></example>
+        </member>
+        <member name="P:skmRss.RssFeed.Items">
+            <summary>
+            Gets a <see cref="T:skmRss.RssFeedItemCollection"/> of <see cref="T:skmRss.RssFeedItem"/> objects that represents the 
+            individual items in the <see cref="T:skmRss.RssFeed"/> control.
+            </summary>
+            <remarks>Use the <b>Items</b> collection to programmatically control the items in the 
+            <see cref="T:skmRss.RssFeed"/> control. The <b>Items</b> collection does not provide any methods to add or 
+            remove items to the collection. However, you can control the contents of an item by providing a handler 
+            for the <see cref="E:skmRss.RssFeed.ItemCreated"/> event.</remarks>
+        </member>
+        <member name="P:skmRss.RssFeed.Controls">
+            <summary>
+            Gets a ControlCollection object that represents the child controls for the control in the UI hierarchy.
+            </summary>
+        </member>
+        <member name="T:skmRss.Engine.FeedTypeEnum">
+            <summary>
+            An enumeration of the possible feed types supported by RssFeed.
+            </summary>
+        </member>
+        <member name="T:skmRss.Engine.RssDocument">
+            <summary>
+            The <b>RssDocument</b> class represents a syndicated feed.  It contains properties that model the feed's attributes:
+            <b>Title</b>, <b>Link</b>, <b>Description</b>, <b>Items</b>, and so on.  The <see cref="P:skmRss.Engine.RssDocument.Items"/> property 
+            is a collection of <see cref="T:skmRss.Engine.RssItem"/> instances, which represent the items that makeup the feed.
+            <br/><br/>
+            The <see cref="T:skmRss.Engine.RssEngine"/> class's <b>GetDataSource</b> method returns an <b>RssDocument</b> instance.
+            </summary>
+        </member>
+        <member name="M:skmRss.Engine.RssDocument.#ctor(System.String,System.String,System.String,System.String,skmRss.Engine.FeedTypeEnum,System.DateTime)">
+            <summary>
+            Creates an RssDocument, which represents a syndicated feed.
+            </summary>
+            <param name="title">The title of the feed.</param>
+            <param name="link">The link (URL) to the feed.</param>
+            <param name="description">A description of the feed.</param>
+            <param name="version">The version of the feed.</param>
+            <param name="feedType">The type of feed - RDF, RSS, or ATOM.</param>
+            <param name="pubDate">The published date of the feed.</param>
+        </member>
+        <member name="P:skmRss.Engine.RssDocument.Title">
+            <summary>
+            The title of the feed.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssDocument.Link">
+            <summary>
+            The link (URL) to the feed.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssDocument.Description">
+            <summary>
+            The description of the feed.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssDocument.Version">
+            <summary>
+            The version of the feed.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssDocument.FeedType">
+            <summary>
+            The <see cref="T:skmRss.Engine.FeedTypeEnum"/> of the feed.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssDocument.PubDate">
+            <summary>
+            The published date of the feed.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssDocument.Items">
+            <summary>
+            The set of items for the feed.
+            </summary>
+        </member>
+        <member name="T:skmRss.RssFeedItemType">
+            <summary>
+            Specifies the type of an <see cref="T:skmRss.RssFeedItem"/> in the <see cref="T:skmRss.RssFeed"/> control.
+            </summary>
+        </member>
+        <member name="T:skmRss.RssFeedItem">
+            <summary>
+            Represents and item (row) in the <see cref="T:skmRss.RssFeed"/> control.
+            </summary>
+            <remarks>You can use the <b>RssFeedItem</b> to programmatically access the contents of an item in the
+            RssFeed control.</remarks>
+        </member>
+        <member name="M:skmRss.RssFeedItem.#ctor(skmRss.RssFeedItemType,System.Int32)">
+            <summary>
+            Creates a new RssFeedItem.
+            </summary>
+            <param name="itemType">The RssFeedItemType enumeration value representing this RssFeedItem's item type.</param>
+        </member>
+        <member name="M:skmRss.RssFeedItem.OnBubbleEvent(System.Object,System.EventArgs)">
+            <summary>
+            When the RssFeedItem contains a Button/LinkButton, if that button is clicked, a postback occurs and
+            the button's Command event is fired (assuming the button's CommandName and/or CommandArgument properties
+            were set).  This event is bubbled up to the RssFeedItem, which then passes it up to its parent - RssFeed -
+            via RaiseBubbleEvent.  Before doing so, it packages the EventArgs into an RssFeedItemCommandEventArgs instance.
+            </summary>
+            <param name="source">The button that was clicked.</param>
+            <param name="args">The button's EventArgs.</param>
+            <returns>A Boolean, indicating if the event was bubbled up to the RssFeed control.</returns>
+        </member>
+        <member name="P:skmRss.RssFeedItem.DataItem">
+            <summary>
+            Gets or sets the data item represented by the RssFeedItem object in the RssFeed control.
+            </summary>
+            <remarks>Use the <b>DataItem</b> property to specify or determine the properties of a data item represented by 
+            the RssFeedItem object in the <see cref="T:skmRss.RssFeed"/> control.  Typically, you'll reference this property in
+            the RssFeed's ItemTemplate or in the ItemCommand event handler.</remarks>
+            <example>
+            &lt;%@ Register TagPrefix="skm" Namespace="skmRss" Assembly="skmRss" %&gt;
+            &lt;skm:RssFeed runat="server" id="myFeed"&gt;
+              &lt;ItemTemplate&gt;
+                &lt;b&gt;Title: &lt;/b&gt; &lt;%# Container.DataItem.Title %&gt;
+              &lt;/ItemTemplate&gt;
+            &lt;/skm:RssFeed&gt;
+            </example>
+        </member>
+        <member name="P:skmRss.RssFeedItem.ItemType">
+            <summary>
+            Gets the RssFeedItem's ItemType.
+            </summary>
+            <value>One of the <see cref="T:skmRss.RssFeedItemType"/> values.</value>
+            <remarks>Use the <b>ItemType</b> property to determine the type of an item in the <see cref="T:skmRss.RssFeed"/> 
+            control. The following table lists the various item types.
+            <list type="table">
+            	<listheader><term>Item Type</term><term>Description</term></listheader>
+            	<item><term>Item</term><description>An item in the RssFeed control.</description></item>
+            	<item><term>AlternatingItem</term><description>An alternating item in the RssFeed control.</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="P:skmRss.RssFeedItem.ItemIndex">
+            <summary>
+            Gets the index of the <see cref="T:skmRss.RssFeedItem"/> object from the <see cref="P:skmRss.RssFeed.Items"/> collection 
+            of the <see cref="T:skmRss.RssFeed"/> control.
+            </summary>
+        </member>
+        <member name="T:skmRss.Engine.RssItem">
+            <summary>
+            The RssItem class represents an "item" from the RSS feed.  Its properties abstract the properties of
+            an RSS "item," such as Title, Link, Description, and so forth.<p />
+            From <a href="http://blogs.law.harvard.edu/tech/rss#ltcategorygtSubelementOfLtitemgt">http://blogs.law.harvard.edu/tech/rss#ltcategorygtSubelementOfLtitemgt</a>:<p /><blockquote>
+            "A channel may contain any number of &lt;item&gt;s. An item may represent a "story" -- much like a 
+            story in a newspaper or magazine; if so its description is a synopsis of the story, and 
+            the link points to the full story. An item may also be complete in itself, if so, the 
+            description contains the text (entity-encoded HTML is allowed), and the link and title may 
+            be omitted. All elements of an item are optional, however at least one of title or 
+            description must be present."</blockquote>
+            </summary>
+        </member>
+        <member name="M:skmRss.Engine.RssItem.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,skmRss.Engine.RssEnclosure)">
+            <summary>
+            Creates a new RssItem instance.
+            </summary>
+            <param name="title">The title of the RSS item.</param>
+            <param name="link">The link (URL) to the RSS item.</param>
+            <param name="description">A description of the RSS item.</param>
+            <param name="author">The author of the RSS item.</param>
+            <param name="category">The category the item belongs to.</param>
+            <param name="guid">The RSS item GUID.</param>
+            <param name="pubDate">The published date of the RSS item.</param>
+            <param name="rssEnclosure">An enclosure included within the RSS item; often used for delivering podcasts.</param>
+        </member>
+        <member name="P:skmRss.Engine.RssItem.Title">
+            <summary>
+            The title of the RSS item.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssItem.Link">
+            <summary>
+            The link (URL) to the RSS item.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssItem.Description">
+            <summary>
+            The description of the RSS item.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssItem.Author">
+            <summary>
+            The author of the RSS item.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssItem.Category">
+            <summary>
+            The category of the RSS item.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssItem.Guid">
+            <summary>
+            The GUID for the RSS item.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssItem.PubDate">
+            <summary>
+            The published date of the RSS item.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssItem.RssEnclosure">
+            <summary>
+            An enclosure included within the RSS item; often used for delivering podcasts.
+            </summary>
+        </member>
+        <member name="T:skmRss.RssFeedItemEventArgs">
+            <summary>
+            When the RssFeed creates a new RssFeedItem and DataBind()s it, it raises its ItemCreated and
+            ItemDataBound events, respectively.  Event handlers for these events accept an EventArgs parameter of
+            type RssFeedItemEventArgs, which includes a reference to the RssFeedItem that was created/databound.
+            </summary>
+        </member>
+        <member name="M:skmRss.RssFeedItemEventArgs.#ctor(skmRss.RssFeedItem)">
+            <summary>
+            Creates a new instance of the RssFeedItemEventArgs object.
+            </summary>
+            <param name="item">The RssFeedItem that was created/databound.</param>
+        </member>
+        <member name="P:skmRss.RssFeedItemEventArgs.Item">
+            <summary>
+            Gets the referenced item in the RssFeed control when the event is raised.
+            </summary>
+        </member>
+        <member name="T:skmRss.Engine.FeedException">
+            <summary>
+            The FeedException is raised whenever RssFeed attempts to consume an external RSS feed and there is
+            some HTTP-based exception in accessing the feed URL.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.FeedException.Url">
+            <summary>
+            Returns the URL that was being accessed when the exception occurred.
+            </summary>
+        </member>
+        <member name="T:skmRss.DateTimeExt">
+            <summary>
+            DateTimeExt is able to parse RFC2822/RFC822 formatted dates.
+            </summary>
+        </member>
+        <member name="M:skmRss.DateTimeExt.Parse(System.String)">
+            Parse is able to parse RFC2822/RFC822 formatted dates.
+            It has a fallback mechanism: if the string does not match,
+            the normal DateTime.Parse() is called. If that throws a FormatException
+            the current date (DateTime.Now) will be returned.
+        </member>
+        <member name="T:skmRss.Engine.FeedTimeoutException">
+            <summary>
+            The FeedTimeoutException is raised whenever RssFeed attempts to consume an external RSS feed, and times out.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.FeedTimeoutException.TriedFor">
+            <summary>
+            Returns the number of milliseconds the connection was attempted before bailing out.
+            </summary>
+        </member>
+        <member name="T:skmRss.Engine.RssItemList">
+            <summary>
+            Represents a strongly-typed collection of <see cref="T:skmRss.Engine.RssItem"/> instances.
+            </summary>
+        </member>
+        <member name="M:skmRss.Engine.RssItemList.Add(skmRss.Engine.RssItem)">
+            <summary>
+            Adds a new RssItem to the end of the collection.
+            </summary>
+            <param name="value">An <see cref="T:skmRss.Engine.RssItem"/> instance.</param>
+            <returns>The index at which <i>value</i> has been added.</returns>
+        </member>
+        <member name="P:skmRss.Engine.RssItemList.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:skmRss.Engine.RssItem"/> element at the specified index.
+            </summary>
+        </member>
+        <member name="T:skmRss.Engine.RssEnclosure">
+            <summary>
+            RssEnclosure represents an enclosure element in an RSS item.  Typically RssEnclosure's are used to
+            provide a link to an MP3 file for use in podcasts.  For more on the &lt;enclosure&gt; element, refer
+            to <a href="http://blogs.law.harvard.edu/tech/rss#ltenclosuregtSubelementOfLtitemgt">http://blogs.law.harvard.edu/tech/rss#ltenclosuregtSubelementOfLtitemgt</a>.
+            </summary>
+        </member>
+        <member name="M:skmRss.Engine.RssEnclosure.#ctor(System.String,System.Int32,System.String)">
+            <summary>
+            Creates a new RssEnclosure instance.
+            </summary>
+            <param name="url">The url of the enclosure.</param>
+            <param name="length">The length (in bytes) of the enclosure.</param>
+            <param name="type">A type of the enclosure.</param>
+        </member>
+        <member name="P:skmRss.Engine.RssEnclosure.Url">
+            <summary>
+            The url of the enclosure.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssEnclosure.Length">
+            <summary>
+            The length (in bytes) of the enclosure.
+            </summary>
+        </member>
+        <member name="P:skmRss.Engine.RssEnclosure.Type">
+            <summary>
+            A type of the enclosure.
+            </summary>
+        </member>
+        <member name="T:skmRss.RssFeedItemCommandEventArgs">
+            <summary>
+            The RssFeed control can have a page developer-defined template.  This template might include Buttons or LinkButtons
+            (or other Web controls).  If a button is in the template, and if it raises its Command event, the event is
+            bubbled up from the RssFeedItem to RssFeed, which then fires its ItemCommand event, much like the
+            DataGrid/DataList/Repeater controls do.  
+            
+            This EventArgs class is the EventArgs that an event handler responding to ItemCommand will accept.  Just like
+            the DataGridItemCommandEventArgs class, this class has an Item, CommandSource, CommandName, and CommandArgument
+            properties...	/// 
+            </summary>
+        </member>
+        <member name="M:skmRss.RssFeedItemCommandEventArgs.#ctor(skmRss.RssFeedItem,System.Object,System.Web.UI.WebControls.CommandEventArgs)">
+            <summary>
+            Creates a new RssFeedItemCommandEventArgs instance.
+            </summary>
+            <param name="item">The RssFeedItem that contained the button that was clicked.</param>
+            <param name="commandSource">The reference to the button that was clicked.</param>
+            <param name="cea">The CommandEventArgs instance passed through the button's Command event.</param>
+        </member>
+        <member name="P:skmRss.RssFeedItemCommandEventArgs.Item">
+            <summary>
+            Returns a reference to the RssFeedItem that contains the button that was clicked.
+            </summary>
+        </member>
+        <member name="P:skmRss.RssFeedItemCommandEventArgs.CommandSource">
+            <summary>
+            Returns a reference to the Button/LinkButton Web control that was clicked.
+            </summary>
+        </member>
+        <member name="T:skmRss.Engine.RssEngine">
+            <summary>
+            RssEngine is the workhorse that grabs the RSS/RDF feed, parses it, and transforms it into an
+            RssDocument instance.  It is responsible for using an HTTP request to grab the feed as well as
+            enumerating the items that exist within the feed.
+            </summary>
+        </member>
+        <member name="M:skmRss.Engine.RssEngine.GetDataSource(System.Object)">
+            <summary>
+            Returns a new RssDocument instance representing the items specified by the passed-in datasource.
+            </summary>
+            <param name="dataSource">Can be assigned a file path, URL,
+            XmlReader, TextReader, XPathDocument, or <see cref="T:skmRss.Engine.RssDocument"/> instance.</param>
+            <returns>An <see cref="T:skmRss.Engine.RssDocument"/> instance representing the items in the passed-in <b>dataSource</b>.</returns>
+            <remarks>If a request is made and the wait period exceeds the specified <b>timeout</b> value,
+            a <see cref="T:skmRss.Engine.FeedTimeoutException"/> exception is thrown.<br/><br/>
+            For more information on making HTTP requests in .NET refer to
+            <a href="http://aspnet.4guysfromrolla.com/articles/122204-1.aspx">A Deeper Look at Performing HTTP Requests in and ASP.NET Page</a>.</remarks>
+        </member>
+        <member name="M:skmRss.Engine.RssEngine.GetDataSource(System.Object,System.Int32)">
+            <summary>
+            Returns a new RssDocument instance representing the items specified by the passed-in datasource.
+            </summary>
+            <param name="dataSource">Can be assigned a file path, URL,
+            XmlReader, TextReader, XPathDocument, or <see cref="T:skmRss.Engine.RssDocument"/> instance.</param>
+            <param name="timeout">The timeout for the HTTP request (in milliseconds).</param>
+            <returns>An <see cref="T:skmRss.Engine.RssDocument"/> instance representing the items in the passed-in <b>dataSource</b>.</returns>
+            <remarks>If a request is made and the wait period exceeds the specified <b>timeout</b> value,
+            a <see cref="T:skmRss.Engine.FeedTimeoutException"/> exception is thrown.<br/><br/>
+            For more information on making HTTP requests in .NET refer to
+            <a href="http://aspnet.4guysfromrolla.com/articles/122204-1.aspx">A Deeper Look at Performing HTTP Requests in and ASP.NET Page</a>.</remarks>
+        </member>
+        <member name="M:skmRss.Engine.RssEngine.GetDataSource(System.Object,System.Int32,System.Net.IWebProxy)">
+            <summary>
+            Returns a new RssDocument instance representing the items specified by the passed-in datasource.
+            </summary>
+            <param name="dataSource">Can be assigned a file path, URL,
+            XmlReader, TextReader, XPathDocument, or <see cref="T:skmRss.Engine.RssDocument"/> instance.</param>
+            <param name="timeout">The timeout for the HTTP request (in milliseconds).</param>
+            <param name="proxy">Information used to connect through a proxy.</param>
+            <returns>An <see cref="T:skmRss.Engine.RssDocument"/> instance representing the items in the passed-in <b>dataSource</b>.</returns>
+            <remarks>If a request is made and the wait period exceeds the specified <b>timeout</b> value,
+            a <see cref="T:skmRss.Engine.FeedTimeoutException"/> exception is thrown.<br/><br/>
+            For more information on making HTTP requests in .NET refer to
+            <a href="http://aspnet.4guysfromrolla.com/articles/122204-1.aspx">A Deeper Look at Performing HTTP Requests in and ASP.NET Page</a>.</remarks>
+        </member>
+        <member name="M:skmRss.Engine.RssEngine.GetDataSource(System.Object,System.Int32,System.Net.IWebProxy,System.Net.ICredentials)">
+            <summary>
+            Returns a new RssDocument instance representing the items specified by the passed-in datasource.
+            </summary>
+            <param name="dataSource">Can be assigned a file path, URL,
+            XmlReader, TextReader, XPathDocument, or <see cref="T:skmRss.Engine.RssDocument"/> instance.</param>
+            <param name="timeout">The timeout for the HTTP request (in milliseconds).</param>
+            <param name="proxy">Information used to connect through a proxy.</param>
+            <param name="credentials">The credentials used for a request that requires authentication.</param>
+            <returns>An <see cref="T:skmRss.Engine.RssDocument"/> instance representing the items in the passed-in <b>dataSource</b>.</returns>
+            <remarks>If a request is made and the wait period exceeds the specified <b>timeout</b> value,
+            a <see cref="T:skmRss.Engine.FeedTimeoutException"/> exception is thrown.<br/><br/>
+            For more information on making HTTP requests in .NET refer to
+            <a href="http://aspnet.4guysfromrolla.com/articles/122204-1.aspx">A Deeper Look at Performing HTTP Requests in and ASP.NET Page</a>.</remarks>
+        </member>
+        <member name="M:skmRss.Engine.RssEngine.GetRSSData(System.Xml.XPath.XPathNavigator)">
+            <summary>
+            Parses the retrieved XML feed as an RSS 2.0 document.
+            </summary>
+        </member>
+        <member name="M:skmRss.Engine.RssEngine.GetRDFData(System.Xml.XPath.XPathNavigator)">
+            <summary>
+            Parses the retrieved XML feed as an RSS 1.0 (i.e., RDF) document.
+            </summary>
+        </member>
+    </members>
+</doc>

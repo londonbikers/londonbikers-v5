@@ -1,0 +1,1 @@
+update apollo_content set f_publish_date = f_creation_date where f_publish_date = '01/01/2000 00:00:00'

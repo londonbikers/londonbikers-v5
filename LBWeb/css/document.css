@@ -1,0 +1,91 @@
+﻿#introImg {
+    background-color: #ccc;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    margin-top: 5px;
+}
+#fb-root {
+    margin-top: 5px;
+}
+.twit {
+    padding-top: 5px;
+}
+#subTitle {
+    margin-bottom: 20px;
+    line-height: 17px;
+}
+#coverImg {
+    float: left;
+    margin-right: 10px;
+}
+#otherStories {
+    margin-left: 10px;
+    float: right;
+    width: 256px;
+    border-top: 1px solid #e3e3e3;
+    border-left: 3px solid #e3e3e3;
+}
+.relatedHead {
+    background-color: #f4f4f4;
+    padding: 5px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+#relatedStoriesHead {
+    border-top: 1px solid #e3e3e3;
+}
+#photosLabel {
+    width: 100px;
+    padding-left: 5px;
+}
+#photosTail {
+    width: 560px;
+    padding-left: 10px;
+    font-style: italic;
+}
+#photosOpening {
+    width: 100%;
+}
+.similarStoryImg {
+    width: 63px;
+    height: 63px;
+    background-color: #ccc;
+    border: 2px solid #605E68;
+    float: left;
+    margin-right: 5px;
+}
+.similarStoryImg:hover {
+    border-color: #d73293;
+}
+.relStory {
+    font-size: 0.9em;
+}
+#buzzContainer {
+    display: inline;
+    padding-top: 5px;
+}
+#firstParagraph {
+    font-family: Arial;
+    font-weight: bold;
+    line-height: 20px;
+    margin-bottom: 15px;
+}
+.ppInnerLink {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 1.3em;
+    padding-top: 2px;
+}
+#editorial b, #editorial strong {
+    font-family: Arial;
+}
+#editorial blockquote {
+	font-style: italic;
+	padding-left: 40px;
+	margin-top: 10px;
+}
+#hdPhotos img {
+    margin-right: 2px;
+    margin-bottom: 2px;
+}

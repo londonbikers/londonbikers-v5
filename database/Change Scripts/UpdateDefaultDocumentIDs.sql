@@ -1,0 +1,5 @@
+UPDATE Sections SET DefaultDocumentID = (SELECT f_uid FROM apollo_content WHERE f_title = 'Competitions Index') WHERE [Name] = 'Competitions'
+UPDATE Sections SET DefaultDocumentID = (SELECT f_uid FROM apollo_content WHERE f_title = 'Partners Index') WHERE [Name] = 'Partners'
+UPDATE Sections SET DefaultDocumentID = (SELECT f_uid FROM apollo_content WHERE f_title = 'Discounts Index') WHERE [Name] = 'Discounts'
+UPDATE Sections SET DefaultDocumentID = (SELECT f_uid FROM apollo_content WHERE f_title = 'Charity Index') WHERE [Name] = 'Charity'
+UPDATE Sections SET DefaultDocumentID = (SELECT f_uid FROM apollo_content WHERE f_title = 'Insurance Qouter') WHERE [Name] = 'Insurance'

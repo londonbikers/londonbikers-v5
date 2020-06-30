@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="This should be used and extended (supports docs and galleries for now) where possible, including refactoring out usage of the old non-generic collections.">
+    <Position X="16.729" Y="0.542" Height="1.323" Width="1.7" />
+  </Comment>
+  <Class Name="Apollo.Models.BlacklistedReferrersCollection">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QAIAAAAAAAAAAABACAAABAAAAAAAAAAAAAAAAAAQAAI=</HashCode>
+      <FileName>Models\BlacklistedReferrersCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Apollo.Models.Comments">
+    <Position X="9.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAgAAACAAACCAECAAABBAAQAAAAAAAQQgAAAAQAAA=</HashCode>
+      <FileName>Models\Comments.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Apollo.Models.DirectoryCategoryCollection">
+    <Position X="3.25" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAACAAABAQAAAAAgAAAQAAAAAARBAA=</HashCode>
+      <FileName>Models\DirectoryCategoryCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Apollo.Models.DirectoryItemCollection">
+    <Position X="7" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAFAACAAABAQAAAAAAAAAQAAAAAAQAAA=</HashCode>
+      <FileName>Models\DirectoryItemCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Apollo.Models.EditorialImages">
+    <Position X="0.75" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAIAAAAAAAEEACAACBAYQAEAAAAABCAAAAEAAAAI=</HashCode>
+      <FileName>Models\EditorialImages.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Apollo.Models.FeaturedDocumentsCollection">
+    <Position X="6.25" Y="10.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAACAARAAAAAAAAAAACAAAAAAAQAA=</HashCode>
+      <FileName>Models\FeaturedDocumentsCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Apollo.Models.GalleryImages">
+    <Position X="3.25" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAACAAAAAAAABAAABQCAAAAAAQAQQABAAAAAEACAE=</HashCode>
+      <FileName>Models\GalleryImages.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Apollo.Models.LatestCacheItems">
+    <Position X="10.5" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAiAAAAAAAEIACAAAAAAAIAAAAAKAAAA=</HashCode>
+      <FileName>Models\LatestCacheItems.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Apollo.Models.LatestDocuments">
+    <Position X="3" Y="10.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAQAAAAAQEQAAAAEAAEAIAAAAAIAAAA=</HashCode>
+      <FileName>Models\LatestDocuments.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Apollo.Models.LatestGalleries">
+    <Position X="6" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAgICAAAIAAIAAAAAAA=</HashCode>
+      <FileName>Models\LatestGalleries.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Apollo.Models.RelatedDocuments">
+    <Position X="0.75" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAIAAAAAAAEAACAAABAQQAAAAAAAAAAAAAEAAAAI=</HashCode>
+      <FileName>Models\RelatedDocuments.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Apollo.Models.TagCollection">
+    <Position X="8.25" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAIBAEAAAAAEQBAACgAABAQAAAAAAAAAQAAACABQAAA=</HashCode>
+      <FileName>Models\TagCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Apollo.Models.LightCollection&lt;T&gt;">
+    <Position X="13.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAACAAABAQAAAAAAEAEQAAAAABQAAA=</HashCode>
+      <FileName>Models\LightCollection.cs</FileName>
+      <NewMemberFileName>Models\LightDocumentCollection.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

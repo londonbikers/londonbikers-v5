@@ -1,0 +1,93 @@
+﻿#frame {
+    width: 985px;
+    overflow: hidden;
+    background-color: #2f2f2f;
+    text-align:center;
+    background-image: url(/_images/portrait-bg.gif);
+    background-repeat: repeat-x;
+}
+#frame1600 {
+    border-top: 5px solid #131313;
+    width: 1600px;
+    overflow: hidden;
+    background-color: #2f2f2f;
+    text-align:center;
+    background-image: url(/_images/portrait-bg.gif);
+    background-repeat: repeat-x;
+    position: relative;
+    left: -307px;
+}
+img.tall {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+div.navTitle {
+    background-color: #2f2f2f;
+    padding-bottom: 4px;
+    text-transform: uppercase;
+    color: #ccc;
+    font-size: 0.7em;
+    text-align: center;
+    font-family: Arial;
+}
+div.navThumb {
+    background-color: #2f2f2f;
+    border-left: 2px solid #2f2f2f;
+}
+#photoTitle {
+    padding: 10px;
+    background-color: #000;
+    color: #ccc;
+    text-transform: uppercase;
+}
+#photoTitle span {
+    color: #4e4d4d;
+}
+#sumpLeft {
+    width: 781px;
+}
+#comment {
+    padding: 10px;
+    background-color: #fff;
+}
+#photographer {
+    background-color: #fafafa;
+    border-bottom: 1px dotted #ccc;
+    vertical-align: middle;
+}
+#photographer b {
+    color: #444;
+}
+div.sizeBtn {
+    font-family: Arial;
+    text-transform: none;
+    font-size: 0.8em;
+    background-color: #242424;
+    padding: 3px 10px 3px 10px;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+}
+div.sizeBtn:hover {
+    background-color: #e1407b;
+    cursor: pointer;
+}
+#photoTitle table {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+#photoTitle td {
+    padding: 0px;
+    margin: 0px;
+    vertical-align: top;
+}
+#btnCell {
+    width: 130px;
+    text-align: right;
+}
+#mpBreaker {
+    position: relative;
+    top: -5px;
+}

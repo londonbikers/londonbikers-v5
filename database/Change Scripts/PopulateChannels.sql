@@ -1,0 +1,1 @@
+ INSERT INTO Channels ([Name], ShortDescription, UrlIdentifier, SiteID) VALUES ('General', 'Covers all topics', 'general', 1)
