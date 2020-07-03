@@ -1,7 +1,7 @@
 # londonbikers-v5
 The fifth version of the londonbikers.com website. This site had a fully-featured CMS that published motorcycle news, articles, photo galleries, a directory and a lot more. The site was made up of this site as the parent IIS web-application and then another application ran under /forums which was a modified version of the InstantForum product. The source-code for that is not licensed for sharing on GitHub unfortunately.
 
-Development of the site started in 2002 as a side-project to help me (Jay) learn .NET better as this was my day job as a developer at the time. It took a couple of years but then the first version was done and LB launched on the 31st December 2004. I had no idea at the time that it would prove popular. The codebase was revised and improved over the next ten years before a total re-write for version 6.
+Development of the site started in 2002 as a side-project to help me (Jay) learn .NET better for my day job as a developer at the time. It took a couple of years but then the first version was done and LB launched on the 31st December 2004. I had no idea at the time that it would prove popular. The codebase was revised and improved over the next ten years before being scrapped for a complete re-write (version 6).
 
 The site was built using the following stack:
 * ASP.NET Web Forms
