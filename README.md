@@ -18,6 +18,8 @@ The site was built using the following stack:
 
 V5 was an evolution of the same code-base. Previous designs looked as follows.
 
+<img src="https://londonbikersarchive.blob.core.windows.net/github/v4-2%20homepage.png" alt="v4 mark 2" width="500"/>
+
 <img src="https://londonbikersarchive.blob.core.windows.net/github/v4%20design.png" alt="v4" width="500"/>
 
 <img src="https://londonbikersarchive.blob.core.windows.net/github/v3%20design.png" alt="v3" width="500"/>
