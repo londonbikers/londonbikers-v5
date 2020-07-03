@@ -10,6 +10,8 @@ The site was built using the following stack:
 
 ## V5 Design
 
+<img src="https://londonbikersarchive.blob.core.windows.net/github/v5%20mark%203.png" alt="v5 mark 3" width="500" />
+
 <img src="https://londonbikersarchive.blob.core.windows.net/github/v5%20homepage.jpg" alt="v5 homepage" width="500"/>
 
 <img src="https://londonbikersarchive.blob.core.windows.net/github/v5%20design.PNG" alt="v5 article page" width="500"/>
