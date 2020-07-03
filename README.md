@@ -10,16 +10,18 @@ The site was built using the following stack:
 
 ## V5 Design
 
-<img src="https://londonbikersarchive.blob.core.windows.net/github/v5%20design.PNG" alt="v4 article page" width="500"/>
+<img src="https://londonbikersarchive.blob.core.windows.net/github/v5%20homepage.jpg" alt="v5 homepage" width="500"/>
+
+<img src="https://londonbikersarchive.blob.core.windows.net/github/v5%20design.PNG" alt="v5 article page" width="500"/>
 
 ## Older Designs
 
 V5 was an evolution of the same code-base. Previous designs looked as follows.
 
-<img src="https://londonbikersarchive.blob.core.windows.net/github/v4%20design.png" alt="v4 article page" width="500"/>
+<img src="https://londonbikersarchive.blob.core.windows.net/github/v4%20design.png" alt="v4" width="500"/>
 
-<img src="https://londonbikersarchive.blob.core.windows.net/github/v3%20design.png" alt="v4 article page" width="500"/>
+<img src="https://londonbikersarchive.blob.core.windows.net/github/v3%20design.png" alt="v3" width="500"/>
 
-<img src="https://londonbikersarchive.blob.core.windows.net/github/v2%20design.jpg" alt="v4 article page" width="500"/>
+<img src="https://londonbikersarchive.blob.core.windows.net/github/v2%20design.jpg" alt="v2" width="500"/>
 
-<img src="https://londonbikersarchive.blob.core.windows.net/github/v1%20design.jpg" alt="v4 article page" width="500"/>
+<img src="https://londonbikersarchive.blob.core.windows.net/github/v1%20design.jpg" alt="v1" width="500"/>
